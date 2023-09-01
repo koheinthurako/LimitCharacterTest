@@ -33,7 +33,7 @@ body {
     border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     resize: none;
-    padding: 15px;
+    padding: 30px 15px;
     font-size: 15px;
     font-weight: 700;
     caret-color: #ff6200;
@@ -47,4 +47,20 @@ body {
 .input-box textarea::placeholder {
     font-size: 16px;
     font-weight: 700;
+}
+
+.input-box .title {
+    position: absolute;
+    top: 38px;
+    left: 45px;
+    color: #ff6200;
+    font-weight: 700;
+}
+
+.input-box .characters {
+    position: absolute;
+    bottom: 38px;
+    right: 45px;
+    display: flex;
+    align-items: center;
 }
