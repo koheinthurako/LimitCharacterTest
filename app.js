@@ -2,25 +2,17 @@ const inputBox = document.querySelector(".input-box"),
 textarea = inputBox.querySelector("textarea"),
 signalNum = inputBox.querySelector(".signal_num")
 
+let allowKeyup = true;
+
 function trueTyping() {
     let valLength = textarea.value.length;
     signalNum.innerText = valLength;
     (valLength > 0) ? inputBox.classList.add("active") : inputBox.classList.remove("active");
     (valLength > 100) ? inputBox.classList.add("error") : inputBox.classList.remove("error");
     if(valLength > 100) {
-        removeEventListener("keyup", code);
+        textarea.value = textarea.value.substring(0, 101);
     };
 }
 
-const code = textarea.addEventListener('keyup', trueTyping);
-
-
-// textarea.addEventListener('keyup', () => {
-//     let valLength = textarea.value.length;
-//     signalNum.innerText = valLength;
-//     (valLength > 0) ? inputBox.classList.add("active") : inputBox.classList.remove("active");
-//     (valLength > 100) ? inputBox.classList.add("error") : inputBox.classList.remove("error");
-//     if(valLength > 100) return false;
-// })
-
-// textarea.removeEventListener('keyup', )
+textarea.addEventListener('keyup', trueTyping);
+textarea.focus();
