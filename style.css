@@ -17,7 +17,7 @@ body {
 
 .input-box {
     position: relative;
-    height: 160px;
+    height: 180px;
     background-color: #fff;
     max-width: 560px;
     width: 100%;
@@ -44,6 +44,11 @@ body {
     border-color: #ff6200;
 }
 
+.input-box.error textarea {
+    border: 3px solid #f00000;
+    border-color: #f00000;
+}
+
 .input-box textarea::placeholder {
     font-size: 16px;
     font-weight: 700;
@@ -57,10 +62,25 @@ body {
     font-weight: 700;
 }
 
+.input-box.error .title {
+    color: #f00000;
+}
+
 .input-box .characters {
+    color: #ff6200;
     position: absolute;
     bottom: 38px;
     right: 45px;
     display: flex;
     align-items: center;
+    display: none;
+    font-weight: 700;
+}
+
+.input-box.active .characters {
+    display: block;
+}
+
+.input-box.error .characters {
+    color: #f00000;
 }
