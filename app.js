@@ -1,8 +1,12 @@
 const inputBox = document.querySelector(".input-box"), 
 textarea = inputBox.querySelector("textarea"),
-signalNum = inputBox.querySelector(".signal_num")
+signalNum = inputBox.querySelector(".signal_num");
 
 let allowKeyup = true;
+
+document.addEventListener('DOMContentLoaded', () => {
+    inputBox.classList.add("introAnimate");
+})
 
 function trueTyping() {
     let valLength = textarea.value.length;
